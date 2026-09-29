@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SuperMotors App</string>
+    <string name="hello_user">Hola, Erik V.</string>
+    <string name="user_profile">Perfil de Usuario</string>
+    
+    <!-- Menu items -->
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_photos">Fotos</string>
+    <string name="menu_specs">Ficha Técnica</string>
+    <string name="menu_web">Web</string>
+    <string name="menu_buttons">Botones</string>
+    
+    <!-- Buttons -->
+    <string name="buttons_title">⚙ BOTONES</string>
+    <string name="btn_specs">Ver Especificaciones</string>
+    <string name="btn_price">Ver Precio</string>
+    <string name="btn_share">Compartir</string>
+    
+    <!-- Profile -->
+    <string name="bike_name">HONDA CBR600RR</string>
+    <string name="bike_type">Deportiva</string>
+    <string name="bike_year">Año: 2023</string>
+    <string name="bike_cc">Cilindraje: 599 cc</string>
+    <string name="bike_hp">Potencia: 119 CV @ 14,500 rpm</string>
+    <string name="bike_speed">Velocidad Máx: 260 km/h</string>
+    <string name="bike_weight">Peso: 194 kg (en orden de marcha)</string>
+    <string name="bike_desc">La Honda CBR600RR es una leyenda de las superdeportivas. Con un motor de 599cc tetracilíndrico de alto régimen, ofrece un rendimiento excepcional y agilidad en circuito. Cuenta con aerodinámica avanzada, control de tracción, cambio rápido (Quickshifter) y componentes de alta gama para una experiencia de conducción emocionante.</string>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_bike_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bike_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/content_text"
+            android:padding="16dp"
+            android:paddingBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/txt_bike_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bike_type"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"/>
+
+        <ImageView
+            android:id="@+id/img_bike"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/img_placeholder"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txt_bike_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bike_year"
+                android:textSize="16sp"
+                android:textColor="@color/content_text"
+                android:padding="8dp"/>
+            
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+            <TextView
+                android:id="@+id/txt_bike_cc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bike_cc"
+                android:textSize="16sp"
+                android:textColor="@color/content_text"
+                android:padding="8dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+            <TextView
+                android:id="@+id/txt_bike_hp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bike_hp"
+                android:textSize="16sp"
+                android:textColor="@color/content_text"
+                android:padding="8dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+            <TextView
+                android:id="@+id/txt_bike_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bike_speed"
+                android:textSize="16sp"
+                android:textColor="@color/content_text"
+                android:padding="8dp"/>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+            <TextView
+                android:id="@+id/txt_bike_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bike_weight"
+                android:textSize="16sp"
+                android:textColor="@color/content_text"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_bike_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bike_desc"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:padding="16dp"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+</ScrollView>
