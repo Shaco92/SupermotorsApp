@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperMotors App | Mockup Interactivo y Diagramas UML - Herramientas Móviles 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #06090e;
+      --bg-surface: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #26334d;
+      --border-subtle: #334155;
+      --border-accent: #be123c;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-red: #e11d48;
+      --accent-burgundy: #7f0000;
+      --accent-burgundy-dark: #5c0000;
+      --accent-emerald: #10b981;
+      --accent-sky: #38bdf8;
+      --accent-amber: #f59e0b;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Encabezado Principal formato Ideas Proyectos_A.html */
+    .main-header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: fit-content;
+      max-width: 95%;
+      margin: 20px auto 25px auto;
+      padding: 18px 28px;
+      background: #1e293b;
+      border-radius: 18px;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      gap: 24px;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .main-header h1 {
+      font-size: 1.65rem;
+      color: #fb7185;
+      font-weight: 800;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .main-header h2 {
+      font-size: 1.05rem;
+      color: #f8fafc;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .profesor {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .header-subtitle {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 14px;
+      border-radius: 8px;
+      border-left: 3px solid #e11d48;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .header-logo {
+      height: 55px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      border-radius: 10px;
+      background-color: #ffffff;
+      padding: 6px;
+    }
+
+    /* Pestañas de Navegación de Entrega */
+    .delivery-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      padding: 0 15px;
+    }
+
+    .tab-btn {
+      background: #1e293b;
+      color: #94a3b8;
+      border: 1px solid #334155;
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: #ffffff;
+      border-color: #475569;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #be123c, #881337);
+      color: #ffffff;
+      border-color: #e11d48;
+      box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
+    }
+
+    /* Contenedores de Sección */
+    .tab-section {
+      display: none;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px 50px 20px;
+    }
+
+    .tab-section.active {
+      display: block;
+    }
+
+    /* --- SECCIÓN 1: MOCKUP INTERACTIVO --- */
+    .mockup-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Selector de Motos */
+    .bike-selector-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #0f172a;
+      padding: 10px 16px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+      max-width: 950px;
+      width: 100%;
+    }
+
+    .bike-pill {
+      background: #1e293b;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .bike-pill:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .bike-pill.active {
+      background: #be123c;
+      color: #ffffff;
+      border-color: #f43f5e;
+      box-shadow: 0 4px 12px rgba(190, 18, 60, 0.4);
+    }
+
+    /* Marco del Smartphone (Split Screen) */
+    .phone-wrapper {
+      position: relative;
+      width: 390px;
+      height: 800px;
+      background: #000000;
+      border-radius: 46px;
+      border: 10px solid #1e293b;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 2px #334155;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Dynamic Island / Notch */
+    .phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 24px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .notch-camera {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #1a1a2e;
+      border: 1px solid #333;
+    }
+
+    /* Barra Superior del Sistema */
+    .phone-status-bar {
+      height: 38px;
+      background: var(--accent-burgundy);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px 0 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      z-index: 40;
+    }
+
+    /* Cuerpo Principal Dividido (Split Layout) */
+    .phone-body {
+      display: flex;
+      flex: 1;
+      height: calc(100% - 38px);
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+
+    /* Menú Lateral (35%) */
+    .phone-sidebar {
+      width: 36%;
+      background: var(--accent-burgundy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 6px;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      overflow-y: auto;
+    }
+
+    .user-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .user-name {
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .user-role {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.62rem;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .menu-item-btn {
+      width: 100%;
+      padding: 8px 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      margin-bottom: 4px;
+      user-select: none;
+    }
+
+    .menu-item-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .menu-item-btn.active {
+      background: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      font-weight: 800;
+    }
+
+    .menu-icon {
+      font-size: 0.95rem;
+      width: 18px;
+      text-align: center;
+    }
+
+    .menu-divider {
+      width: 90%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 8px 0;
+    }
+
+    /* Área de Contenido Derecho (65%) */
+    .phone-content {
+      width: 64%;
+      background: #f8fafc;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Vistas Internas */
+    .inapp-view {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .inapp-view.active {
+      display: flex;
+    }
+
+    /* Tarjetas y Elementos dentro del Teléfono */
+    .card-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .card-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #fee2e2;
+      color: #991b1b;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 125px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.65rem;
+    }
+
+    .spec-label {
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .spec-val {
+      color: #0f172a;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .desc-text {
+      font-size: 0.65rem;
+      color: #475569;
+      line-height: 1.35;
+      background: #ffffff;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .action-btn {
+      width: 100%;
+      background: var(--accent-burgundy);
+      color: #ffffff;
+      border: none;
+      padding: 9px 8px;
+      border-radius: 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .action-btn:hover {
+      background: #a80000;
+    }
+
+    .action-btn.secondary {
+      background: #ffffff;
+      color: #1e293b;
+      border: 1px solid #cbd5e1;
+    }
+
+    .action-btn.secondary:hover {
+      background: #f1f5f9;
+    }
+
+    /* Diálogo Modal Simulado en el Smartphone */
+    .phone-modal {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .phone-modal.active {
+      display: flex;
+    }
+
+    .phone-modal-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal-header {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+    }
+
+    .modal-body {
+      font-size: 0.68rem;
+      color: #334155;
+      line-height: 1.4;
+      white-space: pre-line;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    .modal-close-btn {
+      align-self: flex-end;
+      background: var(--accent-burgundy);
+      color: #ffffff;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Catálogo Interactivo en Teléfono */
+    .cat-search-box {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 4px 8px;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .cat-search-input {
+      border: none;
+      outline: none;
+      font-size: 0.65rem;
+      width: 100%;
+      color: #0f172a;
+    }
+
+    .cat-chips-scroll {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    .cat-chip {
+      white-space: nowrap;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 3px 8px;
+      font-size: 0.58rem;
+      color: #475569;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .cat-chip.active {
+      background: var(--accent-burgundy);
+      color: #ffffff;
+      border-color: var(--accent-burgundy);
+    }
+
+    .cat-bike-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    .cat-bike-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .cat-bike-img {
+      width: 100%;
+      height: 75px;
+      object-fit: cover;
+    }
+
+    .cat-bike-info {
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    /* --- SECCIÓN 2: DIAGRAMA UML --- */
+    .uml-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .uml-legend {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+
+    .legend-box {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+    }
+
+    .grid-classes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .class-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+    }
+
+    .class-header {
+      padding: 10px 14px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+    }
+
+    .class-type {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .class-body {
+      padding: 12px 14px;
+      color: #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .class-methods {
+      padding: 12px 14px;
+      color: #38bdf8;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* --- SECCIÓN 3: REQUERIMIENTOS RF & RNF --- */
+    .req-table-wrapper {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .req-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .req-table th {
+      background: #1e293b;
+      padding: 12px 16px;
+      color: #f8fafc;
+      font-weight: 700;
+      border-bottom: 2px solid #334155;
+    }
+
+    .req-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1e293b;
+      color: #cbd5e1;
+    }
+
+    .req-table tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .badge-id {
+      background: #881337;
+      color: #fecdd3;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .main-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .phone-wrapper {
+        width: 100%;
+        max-width: 360px;
+        height: 720px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado Estilo Guía Docente -->
+  <header class="main-header">
+    <div class="header-content">
+      <h1>🏍️ SuperMotors App · Guía y Catálogo Móvil</h1>
+      <h2>HERRAMIENTAS DE PROGRAMACIÓN MÓVIL 1</h2>
+      <p class="profesor">Profesor: Ing. Mg. Víctor Castro P. · Entrega de Arquitectura y Mockup</p>
+      <p class="header-subtitle">Aplicación móvil nativa en Android (Java/XML) con arquitectura de pantalla dividida (Split-Screen: Menú de Control 35% / Contenido Dinámico 65%).</p>
+    </div>
+    <img src="https://www.poli.edu.co/sites/default/files/styles/desktop_1280x575/public/2025-02/Wallpaper-POLI.jpg.avif?h=e6a33408&itok=vhHPdscy" alt="Logo POLI" class="header-logo">
+  </header>
+
+  <!-- Barra de Pestañas de Entrega -->
+  <nav class="delivery-tabs">
+    <button class="tab-btn active" onclick="switchMainTab('mockup')">
+      <span>📱</span> Mockup Interactivo In-App
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('uml')">
+      <span>📊</span> Diagrama de Clases UML
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('requirements')">
+      <span>📋</span> Requerimientos (RF & RNF)
+    </button>
+    <button class="tab-btn" onclick="switchMainTab('document')">
+      <span>📑</span> Documento de Entrega (Pantallazos + XML + Java)
+    </button>
+  </nav>
+
+  <!-- ================= SECCIÓN 1: MOCKUP INTERACTIVO ================= -->
+  <section id="tab-mockup" class="tab-section active">
+    <div class="mockup-container">
+
+      <!-- Selector de Motocicletas para Demostración Interactiva -->
+      <div class="bike-selector-bar">
+        <span style="font-size: 0.78rem; color: #94a3b8; font-weight: 700; align-self: center; margin-right: 4px;">Seleccionar Moto:</span>
+        <button class="bike-pill active" onclick="selectBike(0)">🔴 Honda CBR600RR</button>
+        <button class="bike-pill" onclick="selectBike(1)">🔵 Yamaha YZF-R1</button>
+        <button class="bike-pill" onclick="selectBike(2)">🔴 Ducati Panigale V4</button>
+        <button class="bike-pill" onclick="selectBike(3)">⚪ BMW S 1000 RR</button>
+        <button class="bike-pill" onclick="selectBike(4)">🟢 Kawasaki Ninja ZX-10R</button>
+        <button class="bike-pill" onclick="selectBike(5)">🔵 Suzuki Hayabusa 25th</button>
+      </div>
+
+      <!-- Smartphone Virtual con Pantalla Dividida -->
+      <div class="phone-wrapper">
+        <!-- Notch / Isla Dinámica -->
+        <div class="phone-notch">
+          <div class="notch-camera"></div>
+        </div>
+
+        <!-- Barra de Estado Android -->
+        <div class="phone-status-bar">
+          <span>7:00</span>
+          <span>5G 📶 98% 🔋</span>
+        </div>
+
+        <!-- Cuerpo Dividido (35% Menú / 65% Contenido) -->
+        <div class="phone-body">
+          
+          <!-- Menú Lateral Izquierdo (35%) -->
+          <div class="phone-sidebar">
+            <div class="user-avatar">👤</div>
+            <div class="user-name">Hola, Erik V.</div>
+            <div class="user-role">Perfil de Usuario</div>
+
+            <div class="menu-item-btn active" id="btn-menu-profile" onclick="switchAppTab('profile')">
+              <span class="menu-icon">👤</span> Perfil
+            </div>
+            <div class="menu-item-btn" id="btn-menu-photos" onclick="switchAppTab('photos')">
+              <span class="menu-icon">📸</span> Fotos
+            </div>
+            <div class="menu-item-btn" id="btn-menu-video" onclick="switchAppTab('video')">
+              <span class="menu-icon">🎬</span> Video
+            </div>
+            <div class="menu-item-btn" id="btn-menu-specs" onclick="switchAppTab('specs')">
+              <span class="menu-icon">⚙️</span> Ficha Técnica
+            </div>
+            <div class="menu-item-btn" id="btn-menu-web" onclick="switchAppTab('web')">
+              <span class="menu-icon">🌐</span> Web
+            </div>
+            <div class="menu-item-btn" id="btn-menu-buttons" onclick="switchAppTab('buttons')">
+              <span class="menu-icon">🔘</span> Botones
+            </div>
+
+            <div class="menu-divider"></div>
+
+            <div class="menu-item-btn" id="btn-menu-catalog" onclick="switchAppTab('catalog')">
+              <span class="menu-icon">🔄</span> Cambiar Moto
+            </div>
+          </div>
+
+          <!-- Área de Contenido Dinámico Derecho (65%) -->
+          <div class="phone-content">
+
+            <!-- 1. VISTA: PERFIL -->
+            <div id="view-profile" class="inapp-view active">
+              <span class="card-badge" id="app-bike-type">Deportiva</span>
+              <div class="card-title" id="app-bike-name">HONDA CBR600RR</div>
+              <img id="app-bike-img" class="card-img" src="" alt="Moto">
+              <div class="spec-row" style="background:#ecfdf5; padding:4px 6px; border-radius:4px;">
+                <span class="spec-label" style="color:#047857; font-weight:700;">Precio Sugerido:</span>
+                <span class="spec-val" id="app-bike-price" style="color:#047857;">$68.900.000 COP</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Año Modelo:</span>
+                <span class="spec-val" id="app-bike-year">2024</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Cilindraje:</span>
+                <span class="spec-val" id="app-bike-cc">599 cc</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Potencia:</span>
+                <span class="spec-val" id="app-bike-hp">121 CV @ 14,250 rpm</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Velocidad Máx:</span>
+                <span class="spec-val" id="app-bike-speed">260 km/h</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Peso:</span>
+                <span class="spec-val" id="app-bike-weight">193 kg</span>
+              </div>
+              <div class="desc-text" id="app-bike-desc">
+                Descripción del vehículo.
+              </div>
+            </div>
+
+            <!-- 2. VISTA: FOTOS -->
+            <div id="view-photos" class="inapp-view">
+              <div class="card-title">Galería de Fotos</div>
+              <span class="card-badge">3 Tomas Oficiales</span>
+              <img id="app-photo-1" class="card-img" style="height:90px;" src="" alt="Foto 1">
+              <img id="app-photo-2" class="card-img" style="height:90px;" src="" alt="Foto 2">
+              <img id="app-photo-3" class="card-img" style="height:90px;" src="" alt="Foto 3">
+            </div>
+
+            <!-- 3. VISTA: VIDEO -->
+            <div id="view-video" class="inapp-view">
+              <div class="card-title">🎬 Cápsula de Video</div>
+              <span class="card-badge" id="app-video-badge">Prueba en Circuito</span>
+              
+              <!-- Reproductor Interactivo -->
+              <div style="position:relative; width:100%; height:120px; background:#0f172a; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+                <img id="app-video-thumb" src="" style="width:100%; height:100%; object-fit:cover; opacity:0.65;">
+                <div style="position:absolute; top:6px; right:6px; background:rgba(0,0,0,0.8); color:#fff; font-size:0.55rem; padding:2px 5px; border-radius:4px; font-weight:700;" id="app-video-dur">04:15 min</div>
+                <div style="position:absolute; bottom:6px; left:6px; background:rgba(0,0,0,0.8); color:#38bdf8; font-size:0.55rem; padding:2px 5px; border-radius:4px; font-weight:700;">4K UHD · 60 FPS</div>
+                <div onclick="openModal('video')" style="position:absolute; width:38px; height:38px; border-radius:50%; background:#be123c; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.5);">▶</div>
+              </div>
+
+              <div style="font-size:0.68rem; font-weight:700; color:#0f172a;" id="app-video-title">Título del video</div>
+              
+              <!-- Telemetría -->
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+                <div style="background:#ffffff; border:1px solid #e2e8f0; padding:4px; border-radius:6px; text-align:center;">
+                  <div style="font-size:0.55rem; color:#64748b;">🏁 0 - 100 km/h</div>
+                  <div style="font-size:0.7rem; font-weight:800; color:#0f172a;" id="app-video-accel">~2.8 seg</div>
+                </div>
+                <div style="background:#ffffff; border:1px solid #e2e8f0; padding:4px; border-radius:6px; text-align:center;">
+                  <div style="font-size:0.55rem; color:#64748b;">🚀 Vel. Punta</div>
+                  <div style="font-size:0.7rem; font-weight:800; color:#e11d48;" id="app-video-speed">299 km/h</div>
+                </div>
+              </div>
+
+              <button class="action-btn" onclick="openModal('video')">▶️ Ver Video Oficial</button>
+              <button class="action-btn secondary" onclick="openModal('share-video')">📢 Compartir Video</button>
+            </div>
+
+            <!-- 4. VISTA: FICHA TÉCNICA -->
+            <div id="view-specs" class="inapp-view">
+              <div class="card-title">Ficha Técnica Mecánica</div>
+              <span class="card-badge">Telemetría y Componentes</span>
+              <div class="spec-row">
+                <span class="spec-label">Motor:</span>
+                <span class="spec-val" id="app-spec-engine">Tetracilíndrico</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Cilindraje:</span>
+                <span class="spec-val" id="app-spec-cc">998 cc</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Potencia:</span>
+                <span class="spec-val" id="app-spec-hp">200 CV</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Torque Máx:</span>
+                <span class="spec-val" id="app-spec-torque">113.3 Nm</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Frenos:</span>
+                <span class="spec-val" id="app-spec-brakes">Brembo 320mm</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Tanque:</span>
+                <span class="spec-val" id="app-spec-tank">17 Litros</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Altura Asiento:</span>
+                <span class="spec-val" id="app-spec-seat">855 mm</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Peso:</span>
+                <span class="spec-val" id="app-spec-weight">201 kg</span>
+              </div>
+            </div>
+
+            <!-- 5. VISTA: WEB IN-APP -->
+            <div id="view-web" class="inapp-view">
+              <div style="display:flex; gap:4px; margin-bottom:4px;">
+                <input id="app-web-url-input" type="text" style="flex:1; font-size:0.6rem; padding:4px 6px; border:1px solid #cbd5e1; border-radius:4px; background:#fff;" readonly>
+                <button onclick="openModal('web-external')" style="background:var(--accent-burgundy); color:#fff; border:none; border-radius:4px; font-size:0.6rem; padding:4px 8px; font-weight:700; cursor:pointer;">IR</button>
+              </div>
+              <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:10px; height:240px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:8px;">
+                <div style="font-size:1.8rem;">🌐</div>
+                <div style="font-size:0.75rem; font-weight:700; color:#0f172a;" id="app-web-brand">Portal Oficial del Fabricante</div>
+                <div style="font-size:0.62rem; color:#64748b;">Navegador Web In-App (WebView nativo en Android)</div>
+                <button class="action-btn" style="width:85%;" onclick="openModal('web-external')">Abrir Sitio Web</button>
+              </div>
+            </div>
+
+            <!-- 6. VISTA: BOTONES & ACCIONES -->
+            <div id="view-buttons" class="inapp-view">
+              <div class="card-title">⚙️ BOTONES Y ACCIONES</div>
+              <span class="card-badge" id="app-buttons-badge">Acciones Dinámicas</span>
+              <button class="action-btn" onclick="openModal('specs-dialog')">📋 Especificaciones Rápidas</button>
+              <button class="action-btn" onclick="openModal('finance-dialog')">💰 Cotizar & Financiación</button>
+              <button class="action-btn" onclick="openModal('share-dialog')">📢 Compartir por WhatsApp</button>
+              <button class="action-btn secondary" id="app-btn-garage" onclick="toggleGarageAction()">❤️ Agregar a Mi Garaje</button>
+              <button class="action-btn secondary" onclick="openModal('maint-dialog')">🔧 Mantenimiento & SOAT</button>
+              <div style="font-size:0.6rem; color:#64748b; text-align:center; margin-top:4px;">
+                Acciones calculadas en tiempo real para el modelo activo.
+              </div>
+            </div>
+
+            <!-- 7. VISTA: CAMBIAR MOTO (CATÁLOGO) -->
+            <div id="view-catalog" class="inapp-view">
+              <div class="card-title">Selecciona una Moto</div>
+              
+              <!-- Buscador -->
+              <div class="cat-search-box">
+                <span>🔍</span>
+                <input type="text" class="cat-search-input" id="cat-search" placeholder="Buscar por modelo o marca..." oninput="filterCatalog()">
+              </div>
+
+              <!-- Filtros por Chips -->
+              <div class="cat-chips-scroll">
+                <span class="cat-chip active" onclick="filterChip('Todas', this)">Todas</span>
+                <span class="cat-chip" onclick="filterChip('Superbike', this)">Superbike</span>
+                <span class="cat-chip" onclick="filterChip('Deportiva', this)">Deportiva</span>
+                <span class="cat-chip" onclick="filterChip('Hyperbike', this)">Hyperbike</span>
+                <span class="cat-chip" onclick="filterChip('Favoritas', this)">⭐ Garaje</span>
+              </div>
+
+              <!-- Lista de Tarjetas del Catálogo -->
+              <div id="catalog-card-list"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Diálogo Modal Simulado -->
+        <div id="phone-modal" class="phone-modal">
+          <div class="phone-modal-card">
+            <div class="modal-header" id="modal-title">Título Diálogo</div>
+            <div class="modal-body" id="modal-content">Contenido del diálogo...</div>
+            <button class="modal-close-btn" onclick="closeModal()">Entendido</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 2: DIAGRAMA UML ================= -->
+  <section id="tab-uml" class="tab-section">
+    <div class="uml-card">
+      <h3 style="font-size: 1.3rem; color: #f8fafc; margin-bottom: 8px;">Diagrama de Clases UML y Arquitectura de Software</h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 20px;">
+        Arquitectura nativa Android orientada a componentes desacoplados: Capa de Datos (<code style="color:#fb7185">model/</code> & <code style="color:#fb7185">repository/</code>), Capa de Presentación (<code style="color:#38bdf8">Activities</code>, <code style="color:#38bdf8">Fragments</code> y <code style="color:#38bdf8">Adapters</code>) e Interfaces de Comunicación.
+      </p>
+
+      <div class="uml-legend">
+        <div class="legend-item"><div class="legend-box" style="background:#be123c;"></div> Modelo de Datos (Serializable)</div>
+        <div class="legend-item"><div class="legend-box" style="background:#0284c7;"></div> Controladores / Fragmentos UI</div>
+        <div class="legend-item"><div class="legend-box" style="background:#059669;"></div> Capa de Persistencia / Repositorio</div>
+        <div class="legend-item"><div class="legend-box" style="background:#d97706;"></div> Adaptadores y Comunicación</div>
+      </div>
+
+      <div class="grid-classes">
+        <!-- Clase Bike -->
+        <div class="class-card">
+          <div class="class-header" style="background:#4c0519; color:#fecdd3;">
+            <span>Bike</span>
+            <span class="class-type" style="background:#be123c; color:#fff;">Model</span>
+          </div>
+          <div class="class-body">
+            <div>- name: String</div>
+            <div>- type: String</div>
+            <div>- displacement: String</div>
+            <div>- power: String</div>
+            <div>- topSpeed: String</div>
+            <div>- price: String</div>
+            <div>- videoTitle: String</div>
+            <div>- videoUrl: String</div>
+            <div>- isFavorite: boolean</div>
+          </div>
+          <div class="class-methods">
+            <div>+ getName(): String</div>
+            <div>+ getPrice(): String</div>
+            <div>+ getVideoUrl(): String</div>
+            <div>+ isFavorite(): boolean</div>
+            <div>+ setFavorite(b: boolean): void</div>
+          </div>
+        </div>
+
+        <!-- Clase BikeRepository -->
+        <div class="class-card">
+          <div class="class-header" style="background:#064e3b; color:#a7f3d0;">
+            <span>BikeRepository</span>
+            <span class="class-type" style="background:#059669; color:#fff;">Repository</span>
+          </div>
+          <div class="class-body">
+            <div>- bikes: List&lt;Bike&gt; (static)</div>
+          </div>
+          <div class="class-methods" style="color:#34d399;">
+            <div>+ getBikes(): List&lt;Bike&gt;</div>
+            <div>+ toggleFavorite(b: Bike): boolean</div>
+            <div>+ filterBikes(q: String, c: String): List</div>
+          </div>
+        </div>
+
+        <!-- Clase MainActivity -->
+        <div class="class-card">
+          <div class="class-header" style="background:#0c4a6e; color:#bae6fd;">
+            <span>MainActivity</span>
+            <span class="class-type" style="background:#0284c7; color:#fff;">Activity</span>
+          </div>
+          <div class="class-body">
+            <div>- fragmentManager: FragmentManager</div>
+            <div>- selectedBike: Bike</div>
+            <div>- isDetailVisible: boolean</div>
+          </div>
+          <div class="class-methods">
+            <div># onCreate(saved: Bundle): void</div>
+            <div>+ onBikeSelected(b: Bike): void</div>
+            <div>+ onMenuItemSelected(opt: String): void</div>
+            <div>+ onBackPressed(): void</div>
+          </div>
+        </div>
+
+        <!-- VideoFragment -->
+        <div class="class-card">
+          <div class="class-header" style="background:#0c4a6e; color:#bae6fd;">
+            <span>VideoFragment</span>
+            <span class="class-type" style="background:#0284c7; color:#fff;">Fragment</span>
+          </div>
+          <div class="class-body">
+            <div>- bike: Bike</div>
+            <div>- webView: WebView</div>
+            <div>- imgThumbnail: ImageView</div>
+          </div>
+          <div class="class-methods">
+            <div>+ newInstance(b: Bike): VideoFragment</div>
+            <div>- playVideoInline(): void</div>
+            <div>- openExternalVideo(): void</div>
+            <div>- shareVideo(): void</div>
+          </div>
+        </div>
+
+        <!-- ButtonsFragment -->
+        <div class="class-card">
+          <div class="class-header" style="background:#0c4a6e; color:#bae6fd;">
+            <span>ButtonsFragment</span>
+            <span class="class-type" style="background:#0284c7; color:#fff;">Fragment</span>
+          </div>
+          <div class="class-body">
+            <div>- bike: Bike</div>
+            <div>- btnGarage: Button</div>
+          </div>
+          <div class="class-methods">
+            <div>+ newInstance(b: Bike): ButtonsFragment</div>
+            <div>- showSpecsDialog(): void</div>
+            <div>- showFinancingDialog(): void</div>
+            <div>- shareBikeDetails(): void</div>
+            <div>- toggleGarage(): void</div>
+          </div>
+        </div>
+
+        <!-- BikeListFragment -->
+        <div class="class-card">
+          <div class="class-header" style="background:#0c4a6e; color:#bae6fd;">
+            <span>BikeListFragment</span>
+            <span class="class-type" style="background:#0284c7; color:#fff;">Fragment</span>
+          </div>
+          <div class="class-body">
+            <div>- adapter: BikeAdapter</div>
+            <div>- selectedCategory: String</div>
+            <div>- currentQuery: String</div>
+          </div>
+          <div class="class-methods">
+            <div>- setupSearch(): void</div>
+            <div>- setupChips(): void</div>
+            <div>- applyFilter(): void</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 3: REQUERIMIENTOS ================= -->
+  <section id="tab-requirements" class="tab-section">
+    <div class="req-table-wrapper">
+      <div style="padding: 16px 20px; background: #1e293b; border-bottom: 1px solid #334155;">
+        <h3 style="color:#f8fafc; font-size:1.1rem;">Requerimientos Funcionales (RF)</h3>
+      </div>
+      <table class="req-table">
+        <thead>
+          <tr>
+            <th style="width: 120px;">ID</th>
+            <th>Requerimiento Funcional</th>
+            <th>Descripción e Implementación Técnica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-id">RF1</span></td>
+            <td><strong>Navegación en Pantalla Dividida (Split Screen)</strong></td>
+            <td>Menú lateral fijo de control (35%) y contenedor dinámico (65%) gestionado mediante transacciones de FragmentManager en MainActivity.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RF2</span></td>
+            <td><strong>Catálogo de Selección con Buscador y Filtros</strong></td>
+            <td>Filtrado reactivo en tiempo real mediante TextWatcher y chips de categoría (Superbike, Deportiva, Hyperbike, Garaje) sobre RecyclerView.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RF3</span></td>
+            <td><strong>Ficha Técnica Mecánica y Perfil</strong></td>
+            <td>Visualización exhaustiva de telemetría de la motocicleta: motor, cilindraje, potencia, par motor, frenos, precio COP y velocidad.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RF4</span></td>
+            <td><strong>Cápsula de Video con Telemetría Oficial</strong></td>
+            <td>Reproducción in-app mediante WebView con fallback a navegador/app externa, badges 4K 60FPS y telemetría de pista (aceleración 0-100).</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RF5</span></td>
+            <td><strong>Navegador Web In-App Oficial</strong></td>
+            <td>WebView nativo con barra de URL editable y navegación directa a las páginas institucionales de Honda, Yamaha, Ducati, etc.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RF6</span></td>
+            <td><strong>Botones y Acciones de Usuario</strong></td>
+            <td>Simulador financiero en cuotas, compartir ficha por WhatsApp mediante Intent.ACTION_SEND, gestión de favoritos en Garaje y plan de mantenimiento.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="req-table-wrapper">
+      <div style="padding: 16px 20px; background: #1e293b; border-bottom: 1px solid #334155;">
+        <h3 style="color:#f8fafc; font-size:1.1rem;">Requerimientos No Funcionales (RNF)</h3>
+      </div>
+      <table class="req-table">
+        <thead>
+          <tr>
+            <th style="width: 120px;">ID</th>
+            <th>Requerimiento No Funcional</th>
+            <th>Criterio de Calidad y Cumplimiento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-id">RNF1</span></td>
+            <td><strong>Arquitectura Nativa Android</strong></td>
+            <td>Desarrollo modular desacoplado en Java y XML con Fragmentos independientes y comunicación mediante interfaces de escucha.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RNF2</span></td>
+            <td><strong>Compatibilidad de SDK</strong></td>
+            <td>Soporte amplio desde Android 6.0 (API 23 / Marshmallow) hasta Android 14 (API 34).</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RNF3</span></td>
+            <td><strong>Experiencia de Usuario (UI/UX)</strong></td>
+            <td>Paleta de colores automotriz (rojo burdeos #7F0000, blanco y acentos oscuros), microinteracciones táctiles y retroalimentación inmediata.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-id">RNF4</span></td>
+            <td><strong>Rendimiento y Memoria</strong></td>
+            <td>Carga eficiente de imágenes con ImageLoader y reciclaje de vistas mediante RecyclerView para evitar bloqueos del hilo principal (ANR).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 4: DOCUMENTO DE ENTREGA (PANTALLAZOS + XML + JAVA) ================= -->
+  <section id="tab-document" class="tab-section">
+    <div style="background:#0f172a; border:1px solid #334155; border-radius:18px; padding:24px; margin-bottom:24px;">
+      <h2 style="font-size:1.4rem; color:#f8fafc; margin-bottom:8px; display:flex; align-items:center; gap:10px;">
+        <span>📑</span> Documento Técnico de Entrega · Herramientas Móviles 1
+      </h2>
+      <p style="color:#94a3b8; font-size:0.85rem; line-height:1.5;">
+        Conforme a las pautas de evaluación del docente, a continuación se relacionan para cada una de las actividades y fragmentos: el <strong>pantallazo real de la interfaz</strong>, el <strong>código XML</strong> correspondiente, la <strong>tabla de vinculación de variables con identificadores</strong> y el <strong>código Java con la declaración y uso de métodos</strong>.
+      </p>
+    </div>
+
+    <!-- Módulo 1: Catálogo General (BikeListFragment) -->
+    <div style="background:#1e293b; border:1px solid #334155; border-radius:16px; padding:20px; margin-bottom:24px;">
+      <h3 style="color:#fb7185; font-size:1.15rem; margin-bottom:12px;">1. Pantalla de Selección de Moto: BikeListFragment & BikeAdapter</h3>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+        <div style="flex:1; min-width:280px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">📸 Pantallazo Real de la Aplicación:</h4>
+          <img src="screenshots/01_catalogo_motos.jpeg" alt="Pantallazo Catálogo" style="width:100%; max-width:280px; border-radius:12px; border:2px solid #334155; box-shadow:0 8px 20px rgba(0,0,0,0.5);">
+        </div>
+        <div style="flex:2; min-width:320px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">🔗 Vinculación de Variables Java con IDs XML:</h4>
+          <table class="req-table" style="font-size:0.78rem; margin-bottom:12px;">
+            <thead>
+              <tr><th>Variable Java</th><th>Tipo de Vista</th><th>ID en XML</th><th>Propósito</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>recyclerView</code></td><td>RecyclerView</td><td><code>R.id.recycler_bikes</code></td><td>Reciclador del catálogo general de motos</td></tr>
+              <tr><td><code>etSearch</code></td><td>EditText</td><td><code>R.id.et_search_bike</code></td><td>Buscador en tiempo real con TextWatcher</td></tr>
+              <tr><td><code>btnClearSearch</code></td><td>ImageView</td><td><code>R.id.btn_clear_search</code></td><td>Botón para borrar el texto de búsqueda</td></tr>
+              <tr><td><code>chipAll, chipSuperbike...</code></td><td>TextView</td><td><code>R.id.chip_all, etc.</code></td><td>Filtro táctil por categorías y garaje</td></tr>
+              <tr><td><code>holder.txtName</code></td><td>TextView</td><td><code>R.id.item_txt_name</code></td><td>Muestra nombre en tarjeta de moto</td></tr>
+              <tr><td><code>holder.btnFavorite</code></td><td>ImageView</td><td><code>R.id.item_btn_favorite</code></td><td>Botón para guardar en garaje personal</td></tr>
+            </tbody>
+          </table>
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:6px;">☕ Código Java de Vinculación y Métodos:</h4>
+          <pre style="background:#090d16; border:1px solid #334155; padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.75rem; color:#38bdf8; overflow-x:auto;">
+// BikeListFragment.java
+RecyclerView recyclerView = view.findViewById(R.id.recycler_bikes);
+etSearch = view.findViewById(R.id.et_search_bike);
+btnClearSearch = view.findViewById(R.id.btn_clear_search);
+chipAll = view.findViewById(R.id.chip_all);
+// Métodos declarados:
+private void setupSearch() { etSearch.addTextChangedListener(...); }
+private void selectCategory(String cat, TextView chip) { ... }
+private void applyFilter() { List&lt;Bike&gt; res = BikeRepository.filterBikes(query, cat); adapter.updateList(res); }
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Módulo 2: Perfil (ProfileFragment) -->
+    <div style="background:#1e293b; border:1px solid #334155; border-radius:16px; padding:20px; margin-bottom:24px;">
+      <h3 style="color:#fb7185; font-size:1.15rem; margin-bottom:12px;">2. Pestaña 1: ProfileFragment (Perfil y Ficha del Modelo)</h3>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+        <div style="flex:1; min-width:280px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">📸 Pantallazo Real de la Aplicación:</h4>
+          <img src="screenshots/02_perfil_moto.jpeg" alt="Pantallazo Perfil" style="width:100%; max-width:280px; border-radius:12px; border:2px solid #334155; box-shadow:0 8px 20px rgba(0,0,0,0.5);">
+        </div>
+        <div style="flex:2; min-width:320px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">🔗 Vinculación de Variables Java con IDs XML:</h4>
+          <table class="req-table" style="font-size:0.78rem; margin-bottom:12px;">
+            <thead>
+              <tr><th>Variable Java</th><th>Tipo de Vista</th><th>ID en XML</th><th>Dato de la Moto Asignado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>txtBikeName</code></td><td>TextView</td><td><code>R.id.txt_bike_name</code></td><td><code>bike.getName()</code></td></tr>
+              <tr><td><code>txtBikeType</code></td><td>TextView</td><td><code>R.id.txt_bike_type</code></td><td><code>bike.getType()</code></td></tr>
+              <tr><td><code>txtBikePrice</code></td><td>TextView</td><td><code>R.id.txt_bike_price</code></td><td><code>bike.getPrice()</code></td></tr>
+              <tr><td><code>txtBikeHp</code></td><td>TextView</td><td><code>R.id.txt_bike_hp</code></td><td><code>bike.getPower()</code></td></tr>
+              <tr><td><code>txtBikeSpeed</code></td><td>TextView</td><td><code>R.id.txt_bike_speed</code></td><td><code>bike.getTopSpeed()</code></td></tr>
+              <tr><td><code>imgBike</code></td><td>ImageView</td><td><code>R.id.img_bike</code></td><td><code>bike.getImageResId()</code></td></tr>
+            </tbody>
+          </table>
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:6px;">☕ Código Java de Vinculación y Métodos:</h4>
+          <pre style="background:#090d16; border:1px solid #334155; padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.75rem; color:#38bdf8; overflow-x:auto;">
+// ProfileFragment.java
+((TextView) view.findViewById(R.id.txt_bike_name)).setText(bike.getName());
+((TextView) view.findViewById(R.id.txt_bike_price)).setText("Precio Sugerido: " + bike.getPrice());
+((TextView) view.findViewById(R.id.txt_bike_hp)).setText("Potencia: " + bike.getPower());
+((TextView) view.findViewById(R.id.txt_bike_speed)).setText("Velocidad Máx: " + bike.getTopSpeed());
+ImageView imgBike = view.findViewById(R.id.img_bike);
+ImageLoader.loadImage(bike.getMainImageUrl(), imgBike, bike.getImageResId());
+// Métodos declarados:
+public static ProfileFragment newInstance(Bike bike) { ... }
+public View onCreateView(...) { ... }
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Módulo 3: Fotos (PhotosFragment) -->
+    <div style="background:#1e293b; border:1px solid #334155; border-radius:16px; padding:20px; margin-bottom:24px;">
+      <h3 style="color:#fb7185; font-size:1.15rem; margin-bottom:12px;">3. Pestaña 2: PhotosFragment (Galería Fotográfica)</h3>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+        <div style="flex:1; min-width:280px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">📸 Pantallazo Real de la Aplicación:</h4>
+          <img src="screenshots/03_galeria_fotos.jpeg" alt="Pantallazo Fotos" style="width:100%; max-width:280px; border-radius:12px; border:2px solid #334155; box-shadow:0 8px 20px rgba(0,0,0,0.5);">
+        </div>
+        <div style="flex:2; min-width:320px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">🔗 Vinculación de Variables Java con IDs XML:</h4>
+          <table class="req-table" style="font-size:0.78rem; margin-bottom:12px;">
+            <thead>
+              <tr><th>Variable Java</th><th>Tipo de Vista</th><th>ID en XML</th><th>Recurso Gráfico</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>photo1</code></td><td>ImageView</td><td><code>R.id.photo1</code></td><td><code>photos[0]</code> (Toma lateral estática)</td></tr>
+              <tr><td><code>photo2</code></td><td>ImageView</td><td><code>R.id.photo2</code></td><td><code>photos[1]</code> (Ángulo aerodinámico en curva)</td></tr>
+              <tr><td><code>photo3</code></td><td>ImageView</td><td><code>R.id.photo3</code></td><td><code>photos[2]</code> (En pista y circuito)</td></tr>
+            </tbody>
+          </table>
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:6px;">☕ Código Java de Vinculación y Métodos:</h4>
+          <pre style="background:#090d16; border:1px solid #334155; padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.75rem; color:#38bdf8; overflow-x:auto;">
+// PhotosFragment.java
+ImageView photo1 = view.findViewById(R.id.photo1);
+ImageView photo2 = view.findViewById(R.id.photo2);
+ImageView photo3 = view.findViewById(R.id.photo3);
+photo1.setImageResource(p1);
+photo2.setImageResource(p2);
+photo3.setImageResource(p3);
+// Métodos declarados:
+public static PhotosFragment newInstance(String[] urls, int[] resIds) { ... }
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Módulo 4: Ficha Técnica (SpecsFragment) -->
+    <div style="background:#1e293b; border:1px solid #334155; border-radius:16px; padding:20px; margin-bottom:24px;">
+      <h3 style="color:#fb7185; font-size:1.15rem; margin-bottom:12px;">4. Pestaña 4: SpecsFragment (Ficha Técnica Mecánica)</h3>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+        <div style="flex:1; min-width:280px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">📸 Pantallazo Real de la Aplicación:</h4>
+          <img src="screenshots/04_ficha_tecnica.jpeg" alt="Pantallazo Ficha Técnica" style="width:100%; max-width:280px; border-radius:12px; border:2px solid #334155; box-shadow:0 8px 20px rgba(0,0,0,0.5);">
+        </div>
+        <div style="flex:2; min-width:320px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">🔗 Vinculación de Variables Java con IDs XML:</h4>
+          <table class="req-table" style="font-size:0.78rem; margin-bottom:12px;">
+            <thead>
+              <tr><th>Variable Java</th><th>Tipo de Vista</th><th>ID en XML</th><th>Especificación Mapeada</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>containerEngine</code></td><td>View (include)</td><td><code>R.id.spec_engine</code></td><td><code>bike.getEngine()</code> (Arquitectura motor)</td></tr>
+              <tr><td><code>containerCc</code></td><td>View (include)</td><td><code>R.id.spec_cc</code></td><td><code>bike.getDisplacement()</code> (Cilindraje)</td></tr>
+              <tr><td><code>containerTorque</code></td><td>View (include)</td><td><code>R.id.spec_torque</code></td><td><code>bike.getTorque()</code> (Par motor máximo)</td></tr>
+              <tr><td><code>containerBrakes</code></td><td>View (include)</td><td><code>R.id.spec_brakes</code></td><td><code>bike.getBrakes()</code> (Sistema de frenos)</td></tr>
+              <tr><td><code>containerTank</code></td><td>View (include)</td><td><code>R.id.spec_tank</code></td><td><code>bike.getTankCapacity()</code> (Capacidad combustible)</td></tr>
+            </tbody>
+          </table>
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:6px;">☕ Código Java de Vinculación y Métodos:</h4>
+          <pre style="background:#090d16; border:1px solid #334155; padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.75rem; color:#38bdf8; overflow-x:auto;">
+// SpecsFragment.java
+setSpecItem(view.findViewById(R.id.spec_engine), "Motor", bike.getEngine());
+setSpecItem(view.findViewById(R.id.spec_cc), "Cilindraje", bike.getDisplacement());
+setSpecItem(view.findViewById(R.id.spec_brakes), "Frenos", bike.getBrakes());
+// Método auxiliar reutilizable:
+private void setSpecItem(View container, String label, String value) {
+    ((TextView) container.findViewById(R.id.spec_label)).setText(label);
+    ((TextView) container.findViewById(R.id.spec_value)).setText(value);
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Módulo 5: Web In-App (WebFragment) -->
+    <div style="background:#1e293b; border:1px solid #334155; border-radius:16px; padding:20px; margin-bottom:24px;">
+      <h3 style="color:#fb7185; font-size:1.15rem; margin-bottom:12px;">5. Pestaña 5: WebFragment (Navegador In-App Oficial)</h3>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+        <div style="flex:1; min-width:280px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">📸 Pantallazo Real de la Aplicación:</h4>
+          <img src="screenshots/05_portal_web.jpeg" alt="Pantallazo Web" style="width:100%; max-width:280px; border-radius:12px; border:2px solid #334155; box-shadow:0 8px 20px rgba(0,0,0,0.5);">
+        </div>
+        <div style="flex:2; min-width:320px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">🔗 Vinculación de Variables Java con IDs XML:</h4>
+          <table class="req-table" style="font-size:0.78rem; margin-bottom:12px;">
+            <thead>
+              <tr><th>Variable Java</th><th>Tipo de Vista</th><th>ID en XML</th><th>Acción</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>webView</code></td><td>WebView</td><td><code>R.id.web_view</code></td><td>Motor de renderizado WebKit in-app</td></tr>
+              <tr><td><code>etUrl</code></td><td>EditText</td><td><code>R.id.et_url</code></td><td>Barra de direcciones URL editable</td></tr>
+              <tr><td><code>btnGo</code></td><td>Button</td><td><code>R.id.btn_go</code></td><td>Carga la dirección especificada</td></tr>
+            </tbody>
+          </table>
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:6px;">☕ Código Java de Vinculación y Métodos:</h4>
+          <pre style="background:#090d16; border:1px solid #334155; padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.75rem; color:#38bdf8; overflow-x:auto;">
+// WebFragment.java
+webView = view.findViewById(R.id.web_view);
+etUrl = view.findViewById(R.id.et_url);
+btnGo = view.findViewById(R.id.btn_go);
+btnGo.setOnClickListener(v -> {
+    String url = etUrl.getText().toString().trim();
+    if (!url.startsWith("http")) url = "https://" + url;
+    webView.loadUrl(url);
+});
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Módulo 6: Botones y Acciones (ButtonsFragment) -->
+    <div style="background:#1e293b; border:1px solid #334155; border-radius:16px; padding:20px; margin-bottom:24px;">
+      <h3 style="color:#fb7185; font-size:1.15rem; margin-bottom:12px;">6. Pestaña 6: ButtonsFragment (Acciones Dinámicas y Simuladores)</h3>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+        <div style="flex:1; min-width:280px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">📸 Pantallazo Real de la Aplicación:</h4>
+          <img src="screenshots/06_botones_acciones.jpeg" alt="Pantallazo Botones" style="width:100%; max-width:280px; border-radius:12px; border:2px solid #334155; box-shadow:0 8px 20px rgba(0,0,0,0.5);">
+        </div>
+        <div style="flex:2; min-width:320px;">
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:8px;">🔗 Vinculación de Variables Java con IDs XML:</h4>
+          <table class="req-table" style="font-size:0.78rem; margin-bottom:12px;">
+            <thead>
+              <tr><th>Variable Java</th><th>Tipo de Vista</th><th>ID en XML</th><th>Evento Asociado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>btnSpecs</code></td><td>Button</td><td><code>R.id.btn_specs</code></td><td><code>showSpecsDialog()</code> (AlertDialog resumen)</td></tr>
+              <tr><td><code>btnPrice</code></td><td>Button</td><td><code>R.id.btn_price</code></td><td><code>showFinancingDialog()</code> (Simulador cuotas)</td></tr>
+              <tr><td><code>btnShare</code></td><td>Button</td><td><code>R.id.btn_share</code></td><td><code>shareBikeDetails()</code> (Intent WhatsApp)</td></tr>
+              <tr><td><code>btnGarage</code></td><td>Button</td><td><code>R.id.btn_garage</code></td><td><code>toggleGarage()</code> (Persistencia favoritas)</td></tr>
+              <tr><td><code>btnMaintenance</code></td><td>Button</td><td><code>R.id.btn_maintenance</code></td><td><code>showMaintenanceDialog()</code> (Mantenimiento)</td></tr>
+            </tbody>
+          </table>
+          <h4 style="color:#cbd5e1; font-size:0.9rem; margin-bottom:6px;">☕ Código Java de Vinculación y Métodos:</h4>
+          <pre style="background:#090d16; border:1px solid #334155; padding:12px; border-radius:8px; font-family:var(--font-mono); font-size:0.75rem; color:#38bdf8; overflow-x:auto;">
+// ButtonsFragment.java
+btnSpecs = view.findViewById(R.id.btn_specs);
+btnPrice = view.findViewById(R.id.btn_price);
+btnShare = view.findViewById(R.id.btn_share);
+btnGarage = view.findViewById(R.id.btn_garage);
+btnMaintenance = view.findViewById(R.id.btn_maintenance);
+
+btnSpecs.setOnClickListener(v -> showSpecsDialog());
+btnPrice.setOnClickListener(v -> showFinancingDialog());
+btnShare.setOnClickListener(v -> shareBikeDetails());
+btnGarage.setOnClickListener(v -> toggleGarage());
+btnMaintenance.setOnClickListener(v -> showMaintenanceDialog());
+// Métodos declarados:
+private void showFinancingDialog() { new AlertDialog.Builder(getContext())...show(); }
+private void shareBikeDetails() { Intent i = new Intent(Intent.ACTION_SEND); ... startActivity(i); }
+private void toggleGarage() { boolean s = BikeRepository.toggleFavorite(bike); updateGarageButtonText(); }
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Datos y Lógica JavaScript del Mockup -->
+  <script>
+    // Datos de las 6 Motocicletas
+    const bikes = [
+      {
+        id: 0,
+        name: "HONDA CBR600RR",
+        type: "Deportiva",
+        year: "2024",
+        cc: "599 cc",
+        hp: "121 CV @ 14,250 rpm",
+        speed: "260 km/h",
+        weight: "193 kg",
+        price: "$68.900.000 COP",
+        engine: "Tetracilíndrico en línea, 16 válvulas",
+        torque: "63 Nm @ 11,500 rpm",
+        brakes: "Doble disco 310mm, pinzas radiales 4 pistones",
+        tank: "18 Litros",
+        seat: "822 mm",
+        desc: "La nueva CBR600RR es una máquina de precisión absoluta. Con un motor tetracilíndrico aullador y un paquete electrónico derivado de MotoGP, es la reina de las 600.",
+        img: "app/src/main/res/drawable/honda_main.jpg",
+        photos: [
+          "app/src/main/res/drawable/honda_1.jpg",
+          "app/src/main/res/drawable/honda_2.jpg",
+          "app/src/main/res/drawable/honda_3.jpg"
+        ],
+        videoTitle: "Honda CBR600RR 2024 - Test Drive & Sonido a 14,250 RPM",
+        videoDuration: "04:15 min",
+        accel: "~3.1 seg",
+        webUrl: "https://www.honda.es/motorcycles/range/super-sport/cbr600rr/overview.html",
+        isFavorite: false
+      },
+      {
+        id: 1,
+        name: "YAMAHA YZF-R1",
+        type: "Superbike",
+        year: "2024",
+        cc: "998 cc",
+        hp: "200 CV @ 13,500 rpm",
+        speed: "299 km/h",
+        weight: "201 kg",
+        price: "$98.500.000 COP",
+        engine: "4 cilindros crossplane, 4 tiempos",
+        torque: "113.3 Nm @ 11,500 rpm",
+        brakes: "Doble disco de 320 mm, pinzas monobloque",
+        tank: "17 Litros",
+        seat: "855 mm",
+        desc: "Desarrollada con la tecnología de la M1 de MotoGP, la R1 cuenta con motor crossplane, chasis de corta distancia entre ejes y una electrónica de vanguardia.",
+        img: "app/src/main/res/drawable/yamaha_main.jpg",
+        photos: [
+          "app/src/main/res/drawable/yamaha_1.jpg",
+          "app/src/main/res/drawable/yamaha_2.jpg",
+          "app/src/main/res/drawable/yamaha_3.jpg"
+        ],
+        videoTitle: "Yamaha YZF-R1 Crossplane - On-Board & Sonido MotoGP",
+        videoDuration: "05:10 min",
+        accel: "~2.8 seg",
+        webUrl: "https://yamahayamamotos.com.co/motocicletas/superdeportivas/r1/",
+        isFavorite: true
+      },
+      {
+        id: 2,
+        name: "DUCATI PANIGALE V4",
+        type: "Superbike",
+        year: "2024",
+        cc: "1,103 cc",
+        hp: "215.5 CV @ 13,000 rpm",
+        speed: "300+ km/h",
+        weight: "195.5 kg",
+        price: "$145.000.000 COP",
+        engine: "Desmosedici Stradale V4 a 90°",
+        torque: "123.6 Nm @ 9,500 rpm",
+        brakes: "Brembo Stylema monobloque de 4 pistones",
+        tank: "17 Litros",
+        seat: "850 mm",
+        desc: "La Panigale V4 es la culminación de la ingeniería italiana. Potencia bruta y elegancia aerodinámica para dominar cualquier circuito del mundo.",
+        img: "app/src/main/res/drawable/ducati_main.jpg",
+        photos: [
+          "app/src/main/res/drawable/ducati_1.jpg",
+          "app/src/main/res/drawable/ducati_2.jpg",
+          "app/src/main/res/drawable/ducati_3.jpg"
+        ],
+        videoTitle: "Ducati Panigale V4 S - Máxima Velocidad & Desmosedici Stradale",
+        videoDuration: "06:20 min",
+        accel: "~2.7 seg",
+        webUrl: "https://www.ducati.com/ww/en/bikes/panigale/panigale-v4",
+        isFavorite: false
+      },
+      {
+        id: 3,
+        name: "BMW S 1000 RR",
+        type: "Superbike",
+        year: "2024",
+        cc: "999 cc",
+        hp: "210 CV @ 13,750 rpm",
+        speed: "303 km/h",
+        weight: "197 kg",
+        price: "$122.000.000 COP",
+        engine: "Tetracilíndrico en línea, ShiftCam",
+        torque: "113 Nm @ 11,000 rpm",
+        brakes: "Doble disco 320mm, pinzas BMW 4 pistones",
+        tank: "16.5 Litros",
+        seat: "832 mm",
+        desc: "La S 1000 RR es todavía más precisa y centrada en el rendimiento. Con alerones aerodinámicos y tecnología ShiftCam para potencia explosiva.",
+        img: "app/src/main/res/drawable/bmw_main.jpg",
+        photos: [
+          "app/src/main/res/drawable/bmw_1.jpg",
+          "app/src/main/res/drawable/bmw_2.jpg",
+          "app/src/main/res/drawable/bmw_3.jpg"
+        ],
+        videoTitle: "BMW S 1000 RR M Package - Prueba a Fondo en Circuito & ShiftCam",
+        videoDuration: "05:45 min",
+        accel: "~2.8 seg",
+        webUrl: "https://www.bmw-motorrad.es/es/models/sport/s1000rr.html",
+        isFavorite: false
+      },
+      {
+        id: 4,
+        name: "KAWASAKI NINJA ZX-10R",
+        type: "Superbike",
+        year: "2024",
+        cc: "998 cc",
+        hp: "203 CV @ 13,200 rpm",
+        speed: "298 km/h",
+        weight: "207 kg",
+        price: "$104.900.000 COP",
+        engine: "Tetracilíndrico en línea, refrigeración líquida",
+        torque: "114.9 Nm @ 11,400 rpm",
+        brakes: "Doble disco Brembo de 330 mm, M50",
+        tank: "17 Litros",
+        seat: "835 mm",
+        desc: "Seis veces campeona consecutiva del WorldSBK, la Ninja ZX-10R es la prueba definitiva de que la potencia sin control no sirve de nada.",
+        img: "app/src/main/res/drawable/kawasaki_main.jpg",
+        photos: [
+          "app/src/main/res/drawable/kawasaki_1.jpg",
+          "app/src/main/res/drawable/kawasaki_2.jpg",
+          "app/src/main/res/drawable/kawasaki_3.jpg"
+        ],
+        videoTitle: "Kawasaki Ninja ZX-10R KRT - ADN WorldSBK en Pista",
+        videoDuration: "04:50 min",
+        accel: "~2.9 seg",
+        webUrl: "https://www.kawasaki.es/es/products/Supersport/2024/Ninja_ZX-10R/overview",
+        isFavorite: false
+      },
+      {
+        id: 5,
+        name: "SUZUKI HAYABUSA SPECIAL EDITION",
+        type: "Hyperbike",
+        year: "2024",
+        cc: "1,340 cc",
+        hp: "190 CV @ 9,700 rpm",
+        speed: "299 km/h",
+        weight: "264 kg",
+        price: "$118.000.000 COP",
+        engine: "4 cilindros, 1.340 cc",
+        torque: "150 Nm @ 7,000 rpm",
+        brakes: "Brembo Stylema radiales de 4 pistones",
+        tank: "20 Litros",
+        seat: "800 mm",
+        desc: "La Suzuki Hayabusa Special Edition celebra 25 años de velocidad legendaria. Con su motor de 1340cc y aerodinámica inconfundible, es la reina de las autopistas.",
+        img: "app/src/main/res/drawable/suzuki_main.jpg",
+        photos: [
+          "app/src/main/res/drawable/suzuki_1.jpg",
+          "app/src/main/res/drawable/suzuki_2.jpg",
+          "app/src/main/res/drawable/suzuki_3.jpg"
+        ],
+        videoTitle: "Suzuki Hayabusa 25th Aniversario - Top Speed 299 km/h en Autopista",
+        videoDuration: "07:15 min",
+        accel: "~2.6 seg",
+        webUrl: "https://moto.suzuki.es/motos/deportivas/2026/hayabusa-edicion-especial",
+        isFavorite: true
+      }
+    ];
+
+    let currentBikeIndex = 0;
+    let currentAppTab = "profile";
+    let activeCatalogCategory = "Todas";
+
+    // Inicializar UI al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCurrentBike();
+      renderCatalogCards();
+    });
+
+    function switchMainTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    }
+
+    function selectBike(index) {
+      currentBikeIndex = index;
+      document.querySelectorAll('.bike-pill').forEach((p, idx) => {
+        p.classList.toggle('active', idx === index);
+      });
+      renderCurrentBike();
+    }
+
+    function renderCurrentBike() {
+      const bike = bikes[currentBikeIndex];
+
+      // Perfil
+      document.getElementById('app-bike-name').textContent = bike.name;
+      document.getElementById('app-bike-type').textContent = bike.type;
+      document.getElementById('app-bike-img').src = bike.img;
+      document.getElementById('app-bike-price').textContent = bike.price;
+      document.getElementById('app-bike-year').textContent = bike.year;
+      document.getElementById('app-bike-cc').textContent = bike.cc;
+      document.getElementById('app-bike-hp').textContent = bike.hp;
+      document.getElementById('app-bike-speed').textContent = bike.speed;
+      document.getElementById('app-bike-weight').textContent = bike.weight;
+      document.getElementById('app-bike-desc').textContent = bike.desc;
+
+      // Fotos
+      document.getElementById('app-photo-1').src = bike.photos[0];
+      document.getElementById('app-photo-2').src = bike.photos[1];
+      document.getElementById('app-photo-3').src = bike.photos[2];
+
+      // Video
+      document.getElementById('app-video-thumb').src = bike.img;
+      document.getElementById('app-video-title').textContent = bike.videoTitle;
+      document.getElementById('app-video-dur').textContent = bike.videoDuration;
+      document.getElementById('app-video-accel').textContent = bike.accel;
+      document.getElementById('app-video-speed').textContent = bike.speed;
+      document.getElementById('app-video-badge').textContent = bike.name;
+
+      // Specs
+      document.getElementById('app-spec-engine').textContent = bike.engine;
+      document.getElementById('app-spec-cc').textContent = bike.cc;
+      document.getElementById('app-spec-hp').textContent = bike.hp;
+      document.getElementById('app-spec-torque').textContent = bike.torque;
+      document.getElementById('app-spec-brakes').textContent = bike.brakes;
+      document.getElementById('app-spec-tank').textContent = bike.tank;
+      document.getElementById('app-spec-seat').textContent = bike.seat;
+      document.getElementById('app-spec-weight').textContent = bike.weight;
+
+      // Web
+      document.getElementById('app-web-url-input').value = bike.webUrl;
+      document.getElementById('app-web-brand').textContent = "Portal Oficial " + bike.name.split(" ")[0];
+
+      // Botones
+      document.getElementById('app-buttons-badge').textContent = bike.name;
+      const btnG = document.getElementById('app-btn-garage');
+      if (bike.isFavorite) {
+        btnG.textContent = "⭐ En Mi Garaje (Guardada)";
+        btnG.style.color = "#f59e0b";
+      } else {
+        btnG.textContent = "❤️ Agregar a Mi Garaje";
+        btnG.style.color = "#be123c";
+      }
+    }
+
+    function switchAppTab(tabName) {
+      currentAppTab = tabName;
+      document.querySelectorAll('.menu-item-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById('btn-menu-' + tabName);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.querySelectorAll('.inapp-view').forEach(v => v.classList.remove('active'));
+      const targetView = document.getElementById('view-' + tabName);
+      if (targetView) targetView.classList.add('active');
+
+      if (tabName === 'catalog') {
+        renderCatalogCards();
+      }
+    }
+
+    // Modal In-App
+    function openModal(type) {
+      const bike = bikes[currentBikeIndex];
+      const modal = document.getElementById('phone-modal');
+      const title = document.getElementById('modal-title');
+      const content = document.getElementById('modal-content');
+
+      if (type === 'specs-dialog') {
+        title.textContent = "📋 Especificaciones: " + bike.name;
+        content.textContent = "Motor: " + bike.engine + "\n"
+          + "Potencia: " + bike.hp + "\n"
+          + "Torque: " + bike.torque + "\n"
+          + "Velocidad Máx: " + bike.speed + "\n"
+          + "Frenos: " + bike.brakes + "\n"
+          + "Tanque: " + bike.tank;
+      } else if (type === 'finance-dialog') {
+        title.textContent = "💰 Cotización & Financiación";
+        content.textContent = "Precio Sugerido: " + bike.price + "\n\n"
+          + "• Cuota Inicial 20%: Incluye Matrícula y SOAT.\n"
+          + "• Plazo: Hasta 48 o 60 meses con póliza todo riesgo.\n"
+          + "• Consulta oficial en: " + bike.webUrl;
+      } else if (type === 'share-dialog') {
+        title.textContent = "📢 Ficha Compartida";
+        content.textContent = "¡Mensaje enviado exitosamente vía WhatsApp!\n\n"
+          + "«Mira la " + bike.name + " (" + bike.hp + ", " + bike.speed + ") a " + bike.price + " en SuperMotors App»";
+      } else if (type === 'maint-dialog') {
+        title.textContent = "🔧 Plan de Mantenimiento";
+        content.textContent = "1. Primer Servicio (1.000 km):\nAceite 100% sintético 10W-40 y filtro.\n\n"
+          + "2. Servicio Regular (Cada 5.000 km):\nPastillas de freno, tensión de cadena y diagnóstico ECU.\n\n"
+          + "3. SOAT y Técnico-Mecánica vigentes.";
+      } else if (type === 'video') {
+        title.textContent = "🎬 Cápsula de Video Oficial";
+        content.textContent = "Reproduciendo cápsula en alta definición:\n\n"
+          + "🏁 " + bike.videoTitle + "\n"
+          + "⏱️ Duración: " + bike.videoDuration + "\n"
+          + "⚡ Telemetría: 0-100 km/h en " + bike.accel + "\n"
+          + "🔗 Canal Oficial: " + bike.webUrl;
+      } else if (type === 'share-video') {
+        title.textContent = "📢 Video Compartido";
+        content.textContent = "Enlace del video de la " + bike.name + " copiado y enviado con éxito.";
+      } else if (type === 'web-external') {
+        title.textContent = "🌐 Navegador Oficial";
+        content.textContent = "Abriendo portal oficial de " + bike.name + "...\nURL: " + bike.webUrl;
+      }
+
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('phone-modal').classList.remove('active');
+    }
+
+    function toggleGarageAction() {
+      const bike = bikes[currentBikeIndex];
+      bike.isFavorite = !bike.isFavorite;
+      renderCurrentBike();
+      const msg = bike.isFavorite ? "⭐ ¡Añadida a tu Garaje Personal!" : "Removida de tu Garaje.";
+      alert(msg);
+    }
+
+    // Catálogo en el Teléfono
+    function renderCatalogCards() {
+      const listContainer = document.getElementById('catalog-card-list');
+      const query = document.getElementById('cat-search') ? document.getElementById('cat-search').value.toLowerCase().trim() : "";
+
+      const filtered = bikes.filter(b => {
+        const matchesCategory = (activeCatalogCategory === "Todas") 
+          || (activeCatalogCategory === "Favoritas" && b.isFavorite) 
+          || (b.type === activeCatalogCategory);
+        const matchesQuery = !query || b.name.toLowerCase().includes(query) || b.type.toLowerCase().includes(query);
+        return matchesCategory && matchesQuery;
+      });
+
+      listContainer.innerHTML = "";
+      if (filtered.length === 0) {
+        listContainer.innerHTML = '<div style="font-size:0.65rem; color:#64748b; text-align:center; padding:20px;">No se encontraron motos.</div>';
+        return;
+      }
+
+      filtered.forEach(b => {
+        const card = document.createElement('div');
+        card.className = "cat-bike-card";
+        card.onclick = () => {
+          selectBike(b.id);
+          switchAppTab('profile');
+        };
+        card.innerHTML = `
+          <img src="${b.img}" class="cat-bike-img">
+          <div class="cat-bike-info">
+            <div style="font-size:0.7rem; font-weight:800; color:#0f172a;">${b.name}</div>
+            <div style="display:flex; justify-content:space-between; font-size:0.6rem;">
+              <span style="color:#64748b;">${b.type} · ${b.year}</span>
+              <span style="color:#047857; font-weight:700;">${b.price}</span>
+            </div>
+          </div>
+        `;
+        listContainer.appendChild(card);
+      });
+    }
+
+    function filterChip(cat, el) {
+      activeCatalogCategory = cat;
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      renderCatalogCards();
+    }
+
+    function filterCatalog() {
+      renderCatalogCards();
+    }
+  </script>
+</body>
+</html>
